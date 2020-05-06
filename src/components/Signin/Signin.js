@@ -18,7 +18,7 @@ class Signin extends React.Component {
     }
 
     onSubmitSignin = ()=>{
-        fetch('http://localhost:3000/signin',{
+        fetch('https://stormy-waters-90458.herokuapp.com/signin',{
             method:'post',
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify({
@@ -41,7 +41,7 @@ class Signin extends React.Component {
                 <main className='pa4 black-80'>
                     <div className="measure">
                         <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-                            <legend className="f1 fw6 ph0 mh0">{'Sign In'}</legend>
+                            <legend className="f1 fw6 ph0 mh0">Sign In</legend>
                             <div className="mt3">
                                 <label className="db fw6 lh-copy f6" htmlFor="email-address">Email</label>
                                 <input 
@@ -70,15 +70,13 @@ class Signin extends React.Component {
                                 value="Sign in" />
                         </div>
                         <div className="lh-copy mt3">
-                            <p onClick={() => onRouteChange('register')} className="f6 link dim black db pointer">{'Register'}</p>
-
+                            <p onClick={() => onRouteChange('register')} className="f6 link dim black db pointer">Register</p>
                         </div>
                     </div>
                 </main>
             </article>
         );
     }
-    
 }
 
 export default Signin;

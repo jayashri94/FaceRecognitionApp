@@ -22,7 +22,7 @@ class Register extends React.Component{
     }
 
     onSubmitSignin = () => {
-        fetch('http://localhost:3000/register', {
+        fetch('https://stormy-waters-90458.herokuapp.com/register', {
             method: 'post',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -31,13 +31,13 @@ class Register extends React.Component{
                 name:this.state.name
             })
         })
-            .then(response => response.json())
-            .then(user => {
-                if (user.id) {
-                    this.props.loadUser(user)
-                    this.props.onRouteChange('home')
-                }
-            })
+        .then(response => response.json())
+        .then(user => {
+            if (user.id) {
+                this.props.loadUser(user)
+                this.props.onRouteChange('home')
+            }
+        })
     }
 
     render(){
@@ -46,9 +46,9 @@ class Register extends React.Component{
                 <main className='pa4 black-80'>
                     <div className="measure">
                         <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-                            <legend className="f1 fw6 ph0 mh0">{'Register'}</legend>
+                            <legend className="f1 fw6 ph0 mh0">Register</legend>
                             <div className="mt3">
-                                <label className="db fw6 lh-copy f6" htmlFor="name">{'Name'}</label>
+                                <label className="db fw6 lh-copy f6" htmlFor="name">Name</label>
                                 <input className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
                                     type="text" 
                                     name="name" 
@@ -56,7 +56,7 @@ class Register extends React.Component{
                                     onChange={this.onNameChange}/>
                             </div>
                             <div className="mt3">
-                                <label className="db fw6 lh-copy f6" htmlFor="email-address">{'Email'}</label>
+                                <label className="db fw6 lh-copy f6" htmlFor="email-address">Email</label>
                                 <input className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
                                     type="email"
                                     name="email-address"
@@ -64,7 +64,7 @@ class Register extends React.Component{
                                     onChange={this.onEmailChange}/>
                             </div>
                             <div className="mv3">
-                                <label className="db fw6 lh-copy f6" htmlFor="password">{'Password'}</label>
+                                <label className="db fw6 lh-copy f6" htmlFor="password">Password</label>
                                 <input 
                                 className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
                                 type="password" 

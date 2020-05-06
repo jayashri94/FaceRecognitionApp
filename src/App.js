@@ -78,20 +78,8 @@ class App extends Component {
 
   constructor(){
     super();
-    this.state={
-      input:'',
-      imageUrl:'',
-      box:{},
-      route:'signin',
-      isSignedIn: false,
-      user:{
-        id: '',
-        name: '',
-        entries: 0,
-        joined: ''
-      }
+    this.state=initialState;
     }
-  }
 
   loadUser = (data) =>{
     this.setState({user:{
@@ -117,7 +105,6 @@ class App extends Component {
   }
 
   displayFaceBox = (box) => {
-    console.log(box)
     this.setState({box:box});
   }
 
@@ -127,7 +114,7 @@ class App extends Component {
 
   onButtonSubmit = () =>{
     this.setState({imageUrl:this.state.input});
-    fetch('http://localhost:3000/imageurl', {
+    fetch('https://stormy-waters-90458.herokuapp.com/imageurl', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -137,7 +124,7 @@ class App extends Component {
     .then(response => response.json())
     .then(response =>{
       if(response){
-        fetch('http://localhost:3000/image',{
+        fetch('https://stormy-waters-90458.herokuapp.com/image',{
           method: 'put',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -150,7 +137,6 @@ class App extends Component {
       })
       .catch(console.log)
     }
-    
     this.displayFaceBox(this.calculateFaceLocation(response))
   })
   .catch(err =>console.log(err));
@@ -169,7 +155,7 @@ class App extends Component {
     const {isSignedIn,imageUrl,route,box} = this.state;
     return (
       <div className="App">
-        <Particles className='particles' 
+        <Particles className='particles'
         params={particleOptions}/>
         <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} />
       { route === 'home'
@@ -187,7 +173,7 @@ class App extends Component {
               imageurl={imageUrl}/>
           </div>
           :(
-            this.state.route ==='signin' ?
+            route ==='signin' ?
               < Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange} /> :
               < Register loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
           )  
