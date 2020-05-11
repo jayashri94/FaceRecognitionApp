@@ -12,25 +12,25 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ### Tools used
 
 ## Front-End
-•	HTML5
-•	CSS3
-•	React.js
+*	HTML5
+*	CSS3
+*	React.js
 
 ## APIs
-•	Clarifai
-•	Facerecognition_App API
+*	Clarifai
+*	Facerecognition_App API
 
 ## NPM Packages
 
-•	Create-React-App
-•	Express
-•	Tachyons
-•	react-tilt
-•	particles.js
-•	Bcrypt
-•	Postgresql
-•	knex
-•	cors
+*	Create-React-App
+*	Express
+*	Tachyons
+*	react-tilt
+*	particles.js
+*	Bcrypt
+*	Postgresql
+*	knex
+*	cors
 
 The app is Deployed in Heroku
 
