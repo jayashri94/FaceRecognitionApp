@@ -1,4 +1,4 @@
-### Face Recognition App
+# Face Recognition App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -11,16 +11,16 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### Tools used
 
-## Front-End
+### Front-End
 *	HTML5
 *	CSS3
 *	React.js
 
-## APIs
+### APIs
 *	Clarifai
 *	Facerecognition_App API
 
-## NPM Packages
+### NPM Packages
 
 *	Create-React-App
 *	Express
