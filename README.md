@@ -34,4 +34,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 The app is Deployed in Heroku
 
+![ Images of the App](link-to-image)
+
 Logo Attribute : http://www.dariusdan.com
